@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="contactDetailViewModel"
+            type="com.chiki.poststest.ui.contacts.detail.ContactDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.contacts.detail.ContactDetailFragment">
+
+        <ImageView
+            android:id="@+id/image_contact"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_contact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_contact">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{contactDetailViewModel.currentContact.name}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:hint="@string/number"
+            app:layout_constraintEnd_toEndOf="@+id/container_name"
+            app:layout_constraintStart_toStartOf="@+id/container_name"
+            app:layout_constraintTop_toBottomOf="@+id/container_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{contactDetailViewModel.currentContact.number}"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:onClick="@{()-> contactDetailViewModel.onEditButton()}"
+            android:text="@string/edit"
+            app:layout_constraintEnd_toStartOf="@+id/delete_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_number" />
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> contactDetailViewModel.onDeleteButton()}"
+            android:text="@string/delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_button"
+            app:layout_constraintTop_toTopOf="@+id/edit_button" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:onClick="@{()-> contactDetailViewModel.onCancelButton()}"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toStartOf="@+id/save_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_number" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> contactDetailViewModel.onSaveButton()}"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"
+            app:layout_constraintTop_toTopOf="@+id/cancel_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
