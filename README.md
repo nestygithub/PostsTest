@@ -21,3 +21,7 @@ Se usó para solución del ejecricio:
 * Coroutines
 * RecyclerView
 
+![posts_list](https://user-images.githubusercontent.com/86685007/146701630-1e66a2c4-c49e-4b59-be70-57425b5d5a7c.png)
+![post_detail](https://user-images.githubusercontent.com/86685007/146701641-06ae9b03-c71a-4b61-8154-2decb45b1d59.png)
+![contacts_list](https://user-images.githubusercontent.com/86685007/146701647-10c260a1-8437-45b3-b35f-23c4aeb27a50.png)
+![contact_detail](https://user-images.githubusercontent.com/86685007/146701651-37b5979f-3e01-4c6f-b994-08deadaa4059.png)
