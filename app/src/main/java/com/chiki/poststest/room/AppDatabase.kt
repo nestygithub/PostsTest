@@ -4,11 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.chiki.poststest.models.Comment
 import com.chiki.poststest.models.Contact
+import com.chiki.poststest.models.Post
 
-@Database(entities = [Contact::class], version = 1, exportSchema = false)
+@Database(entities = [Contact::class, Post::class,Comment::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
+
     abstract fun contactDao(): ContactDao
+    abstract fun postDao(): PostDao
+    abstract fun commentsDao(): CommentDao
 
     companion object {
         @Volatile
