@@ -1,12 +1,13 @@
 # PostsTest
 
-App que muestra un listado de posts.
-Los posts se optienen del siguiente endpoint: https://jsonplaceholder.typicode.com/posts
-Al seleccionar un post muestra los comentarios asociados: Ej: https://jsonplaceholder.typicode.com/comments?postId=1
-Doumentación: https://jsonplaceholder.typicode.com/
-Además la app muestra un listado de los contactos almacenados en el teléfono. Al hacer tap sobre un contacto se puede editar o eliminar el mismo.
+The app shows a list of posts.
+Those posts get retrieved from the following endpoint: https://jsonplaceholder.typicode.com/posts
+Selecting a post, the app shows the comments associated: Ej: https://jsonplaceholder.typicode.com/comments?postId=1
+Documentation: https://jsonplaceholder.typicode.com/
+The app also shows the list of contacts from the phone. Selecting a contact, it can be edited or deleted.
 
-Se usó para solución del ejecricio:
+
+It was used for the solution:
 * MVVM Architecture
 * Retrofit
 * Moshi
